@@ -22,7 +22,7 @@
     <li>Clone este repositório para o seu sistema local:</li>
   </ol>
 
-  <pre><code>git clone https://seu-link-do-repositorio.git</code></pre>
+  <pre><code>git clone https://github.com/PaduaDEV/nodejsback.git</code></pre>
 
   <ol start="3">
     <li>Navegue até o diretório do projeto:</li>
