@@ -8,5 +8,6 @@ const bairroController: BairroController = new BairroController();
 bairroRotas.post('/', bairroController.incluirBairro);
 bairroRotas.put('/', bairroController.alterarBairro);
 bairroRotas.get('/', bairroController.pesquisarBairro);
+bairroRotas.delete('/:codigoBairro', bairroController.deletarBairro);
 
 export default bairroRotas;

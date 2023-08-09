@@ -66,6 +66,35 @@ class BairroDao extends AbstractDao {
             }
         }
     }
+    public async deletarBairro(codigoBairro: number) {
+        try {
+            const sql = "DELETE FROM TB_BAIRRO WHERE CODIGO_BAIRRO = :codigoBairro";
+            const parametros = [codigoBairro];
+            const resultado = await this.conexao.execute(sql, parametros);
+            console.log(
+                `QUANTIDADE DE REGISTROS DELETADOS (Bairros): ${resultado.rowsAffected}`
+            );
+            if (resultado.rowsAffected == 0) {
+                throw new AlterarError(
+                    "Bairro",
+                    `Não existe Bairro com o código ${codigoBairro}`,
+                    404,
+                    null
+                );
+            }
+        } catch (error) {
+            if (error instanceof AlterarError) {
+                throw error;
+            } else {
+                throw new AlterarError(
+                    "Bairro",
+                    "Erro ao deletar no banco de dados",
+                    404,
+                    error
+                );
+            }
+        }
+    }
 
     public async pesquisarBairro(bairroVoFiltroPesquisa: BairroVo): Promise<any> {
         try {

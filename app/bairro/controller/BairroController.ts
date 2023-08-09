@@ -113,6 +113,36 @@ class BairroController {
             await Conexao.fecharConexao();
         }
     }
+    public async deletarBairro(request: Request, response: Response) {
+        try {
+            let conexao = await Conexao.abrirConexao();
+            let bairroBe: BairroBe = new BairroBe(conexao);
+            let { codigoBairro } = request.params; // Suponiendo que el código del bairro se pasará como parámetro en la URL
+            if (isNaN(parseInt(codigoBairro))) {
+                throw new NumeroFormatoInvalidoError(
+                    'deletar',
+                    'Bairro',
+                    'codigoBairro',
+                    codigoBairro,
+                    404
+                );
+            }
+            await bairroBe.deletarBairro(parseInt(codigoBairro));
+            await Conexao.commit();
+            return response.status(200).json({ mensagem: 'Bairro deletado com sucesso.' });
+        } catch (error) {
+            console.error(error);
+            await Conexao.rollback();
+            let codigoErro: number = error instanceof AbstractError ? error.status : 404;
+            return response.status(codigoErro).json(
+                error instanceof AbstractError
+                    ? error
+                    : { status: 404, mensagem: 'Não foi possível deletar o Bairro.' }
+            );
+        } finally {
+            await Conexao.fecharConexao();
+        }
+    }
 }
 
 export default BairroController;

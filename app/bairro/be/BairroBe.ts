@@ -37,7 +37,13 @@ class BairroBe extends AbstractBe {
         }
         return registros;
     }
+    public async deletarBairro(codigoBairro: number) {
+        if (!codigoBairro || codigoBairro < 1) {
+            throw new CampoObrigatorioError("deletar Bairro", "codigoBairro");
+        }
 
+        await this.bairroDao.deletarBairro(codigoBairro);
+    }
     private validarCampos(
         bairroVo: BairroVo,
         acao: string,
