@@ -140,6 +140,102 @@
     "status": 1
 }
 </code></pre>
+<h2>GET Pessoa</h2>
+<pre><code>
+{
+    "codigoPessoa": 12,
+    "nome": "Pedro",
+    "sobrenome": "Paulo",
+    "idade": 21,
+    "login": "PP.dois",
+    "senha": "sen12345678ha",
+    "status": 1,
+    "enderecos": [
+        {
+            "codigoEndereco": 15,
+            "codigoPessoa": 12,
+            "codigoBairro": 1,
+            "nomeRua": "RUA CRIADA",
+            "numero": "123",
+            "complemento": "MINHA CASA UM",
+            "cep": "11111-678",
+            "bairro": {
+                "codigoBairro": 1,
+                "codigoMunicipio": 82,
+                "nome": "Adriana Parque",
+                "status": 1,
+                "municipio": {
+                    "codigoMunicipio": 82,
+                    "codigoUF": 9,
+                    "nome": "Anápolis",
+                    "status": 1,
+                    "uf": {
+                        "codigoUF": 9,
+                        "sigla": "GO",
+                        "nome": "Goiás",
+                        "status": 1
+                    }
+                }
+            }
+        },
+        {
+            "codigoEndereco": 13,
+            "codigoPessoa": 12,
+            "codigoBairro": 3,
+            "nomeRua": "RUA C",
+            "numero": "456",
+            "complemento": "MINHA CASA TRÊS",
+            "cep": "33333-680",
+            "bairro": {
+                "codigoBairro": 3,
+                "codigoMunicipio": 82,
+                "nome": "Alvorada",
+                "status": 1,
+                "municipio": {
+                    "codigoMunicipio": 82,
+                    "codigoUF": 9,
+                    "nome": "Anápolis",
+                    "status": 1,
+                    "uf": {
+                        "codigoUF": 9,
+                        "sigla": "GO",
+                        "nome": "Goiás",
+                        "status": 1
+                    }
+                }
+            }
+        },
+        {
+            "codigoEndereco": 12,
+            "codigoPessoa": 12,
+            "codigoBairro": 2,
+            "nomeRua": "ALTERADA",
+            "numero": "456",
+            "complemento": "MINHA CASA DOIS",
+            "cep": "22222-680",
+            "bairro": {
+                "codigoBairro": 2,
+                "codigoMunicipio": 82,
+                "nome": "Alto da Bela Vista",
+                "status": 1,
+                "municipio": {
+                    "codigoMunicipio": 82,
+                    "codigoUF": 9,
+                    "nome": "Anápolis",
+                    "status": 1,
+                    "uf": {
+                        "codigoUF": 9,
+                        "sigla": "GO",
+                        "nome": "Goiás",
+                        "status": 1
+                    }
+                }
+            }
+        }
+    ]
+}
+</code></pre>
 
 </body>
 </html>
+
