@@ -265,6 +265,17 @@
 <p>Exclui uma pessoa e seus respectivos endereços.</p>
 </code></pre>
 
+
+<h2>Desenvolvedor</h2>
+<p>Este projeto foi desenvolvido por Arthur Pádua.</p>
+<p>Para mais informações sobre o desenvolvedor e outros projetos, visite:</p>
+<ul>
+  <li>GitHub: <a href="https://github.com/PaduaDEV">https://github.com/PaduaDEV</a></li>
+  <li>LinkedIn: <a href="https://www.linkedin.com/in/arthur-p%C3%A1dua-611479246/">https://www.linkedin.com/in/arthur-p%C3%A1dua-611479246/</a></li>
+</ul>
+
+
+
 </body>
 </html>
 
