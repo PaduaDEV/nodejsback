@@ -234,6 +234,35 @@
         }
     ]
 }
+  <h2>PUT /enderecos/{codigoEndereco}</h2>
+<p>Atualiza um endereço existente.</p>
+<pre><code>
+{
+    "nomeRua": "Nova Rua",
+    "numero": "456",
+    "complemento": "Apto 123",
+    "cep": "22222-680",
+    "codigoBairro": 2
+}
+</code></pre>
+
+<h2>DELETE /enderecos/{codigoEndereco}</h2>
+<p>Exclui um endereço.</p>
+
+<h2>PUT /pessoas/{codigoPessoa}</h2>
+<p>Atualiza os detalhes de uma pessoa existente.</p>
+<pre><code>
+{
+    "nome": "Novo Nome",
+    "sobrenome": "Novo Sobrenome",
+    "idade": 25,
+    "login": "novo.login",
+    "senha": "novaSenha123"
+}
+</code></pre>
+
+<h2>DELETE /pessoas/{codigoPessoa}</h2>
+<p>Exclui uma pessoa e seus respectivos endereços.</p>
 </code></pre>
 
 </body>
