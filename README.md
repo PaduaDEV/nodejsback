@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>API de Cadastro de Endereços e Pessoas</title>
+
 </head>
 
 <body>
@@ -35,6 +35,43 @@
   </ol>
 
   <pre><code>npm install</code></pre>
+ 
+<h1>Configuração do Banco de Dados Oracle XE 21c via Docker</h1>
+
+<p>Este projeto utiliza o banco de dados Oracle XE 21c via Docker. Siga estas etapas para configurar e usar o banco de dados:</p>
+
+<h2>Instalação do Docker</h2>
+<p>Se você ainda não tem o Docker instalado, siga as instruções em <a href="https://www.docker.com/get-started">https://www.docker.com/get-started</a> para instalar o Docker em seu sistema.</p>
+
+<h2>Executando o Banco de Dados Oracle XE</h2>
+<ol>
+  <li>Abra o terminal.</li>
+  <li>Execute o seguinte comando para baixar e executar a imagem do Oracle XE 21c:</li>
+</ol>
+
+<pre><code>docker run -d -it --name oracle-xe -p 1521:1521 -e ORACLE_PWD=sua-senha -e ORACLE_CHARACTERSET=AL32UTF8 oracle/database:21.3.0-xe</code></pre>
+
+<p>Lembre-se de substituir <code>sua-senha</code> pela senha que você deseja configurar para o banco de dados.</p>
+
+<h2>Acesso ao Banco de Dados</h2>
+<p>Depois que o contêiner estiver em execução, você pode acessar o banco de dados Oracle XE usando as seguintes informações:</p>
+<ul>
+  <li>Host: localhost</li>
+  <li>Porta: 1521</li>
+  <li>SID: XE</li>
+  <li>Nome de usuário: C##NODE</li>
+  <li>Senha: node </li>
+</ul>
+
+<h2>Configuração da Aplicação</h2>
+<p>Para configurar a aplicação para usar o banco de dados Oracle XE, atualize as configurações de conexão no arquivo de configuração da aplicação (se houver) para usar as informações fornecidas acima.</p>
+
+<h2>Encerrando o Contêiner</h2>
+<p>Quando você terminar de usar o banco de dados, você pode parar e remover o contêiner executando os seguintes comandos:</p>
+
+<pre><code>docker stop oracle-xe</code></pre>
+<pre><code>docker rm oracle-xe</code></pre>
+
 
   <h2>Uso</h2>
 
